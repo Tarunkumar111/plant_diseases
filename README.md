@@ -1,50 +1,42 @@
-Plant disease classification
-==============================
+# PlantVillage Analysis
 
-Classification of plant diseases using image data and neural networks
+This repository contains the code and results in context of the paper titled **Using Deep Learning for Image-Based Plant Disease Detection**
 
-This repository contains the code and relevant analysis used to train several 
-deep convolutional neural networks (CNN) to identify 
-14 crop species and 26 diseases.
+####Organisation of code
+The code for all the experiment configurations is arranged in directory structures across three different levels.
 
-The models were trained using a public dataset of 54,306 images of diseased 
-and healthy plant leaves collected under controlled conditions and
-made available by the PlantVillage project.
+The first level is based on the choice of Deep Neural Network Architecture, which is divided into :
 
-Three different approaches were evaluated to improve the baseline accuracy
-reported by Mohanty et al. in the research paper, "Using Deep Learning
-for Image-Based Plant Disease Detection" in which CNN models were also
-used to classifiy plant diseases using the same dataset. The three
-approaches investigated are Transfer Learning, Single Image
-Super-Resolution and Hierarchical Superclass Learning, all of which
-focus on a particular component that is unique to this dataset or image
-classification problems in general.
+* AlexNet
+* GoogleNet
 
-Project Organization
-------------
+Inside each of these folders, the second layer is based on the choice of dataset type, and the train-test split. The available options are :
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    |
-    ├── src                <- Source code used for training models and running experiments
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+* color-20-80
+* color-40-60
+* color-50-50
+* color-60-40
+* color-80-20
+* grayscale-20-80
+* grayscale-40-60
+* grayscale-50-50
+* grayscale-60-40
+* grayscale-80-20
+* segmented-20-80
+* segmented-40-60
+* segmented-50-50
+* segmented-60-40
+* segmented-80-20
+
+And finally, inside each of these folders, the third layer is based on the choice of training approach, which is divided into:
+
+* Traing From Scratch
+* Finetuning (Transfer Learning)
 
 
---------
+All of these configurations lead to a total of **60** different experiment configurations.
 
 
+#Author   
+
+Tarun Kumar{<tarunkumarjee58@gmail.com>}
